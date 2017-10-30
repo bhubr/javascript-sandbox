@@ -10,11 +10,16 @@ body {
 	width: 600px;
 }
 button {
-  background: #24d;
   padding: 10px;
   color: white;
   border: none;
   border-radius: 3px;
+}
+.blue {
+  background: #24d;
+}
+.red {
+  background: #d42;
 }
 input {
   border: 1px solid #ddd;  

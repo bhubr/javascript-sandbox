@@ -26,8 +26,9 @@
             <p>Enter your name please:</p>
             <form id="helloForm">
                 <input id="inputName" value="" />
-                <button type="submit">Say hello again</button>
+                <button class="blue" type="submit">Say hello again</button>
             </form>
+            <button class="red" id="clearForm" type="button">Clear form</button>
         </div>
         <script src="js/vendor/modernizr-3.5.0.min.js"></script>
         <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
@@ -44,13 +45,19 @@
         <script>
             var form = document.getElementById('helloForm');
             var input = document.getElementById('inputName');
+            var clearButton = document.getElementById('clearForm');
 
             function sayHelloAgain(e) {
                 e.preventDefault();
                 alert('Hello ' + input.value);
             }
 
+            function clearForm() {
+                input.value = '';
+            }
+
             form.onsubmit = sayHelloAgain;
+            clearButton.onclick = clearForm;
         </script>
     </body>
 </html>
