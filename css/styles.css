@@ -16,3 +16,8 @@ button {
   border: none;
   border-radius: 3px;
 }
+input {
+  border: 1px solid #ddd;  
+  padding: 8px;
+  border-radius: 3px;
+}

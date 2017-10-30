@@ -23,7 +23,11 @@
         <!-- Add your site or application content here -->
         <div class="container">
             <p>Hello world! This is HTML5 Boilerplate.</p>
-            <button onclick="sayHelloAgain()">Say hello again</button>
+            <p>Enter your name please:</p>
+            <form id="helloForm" onsubmit="sayHelloAgain()">
+                <input id="inputName" value="" />
+                <button type="submit">Say hello again</button>
+            </form>
         </div>
         <script src="js/vendor/modernizr-3.5.0.min.js"></script>
         <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
