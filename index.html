@@ -24,7 +24,7 @@
         <div class="container">
             <p>Hello world! This is HTML5 Boilerplate.</p>
             <p>Enter your name please:</p>
-            <form id="helloForm" onsubmit="sayHelloAgain()">
+            <form id="helloForm">
                 <input id="inputName" value="" />
                 <button type="submit">Say hello again</button>
             </form>
@@ -42,9 +42,15 @@
         </script>
         <script src="https://www.google-analytics.com/analytics.js" async defer></script>
         <script>
-            function sayHelloAgain() {
-                alert('Hello world!');
+            var form = document.getElementById('helloForm');
+            var input = document.getElementById('inputName');
+
+            function sayHelloAgain(e) {
+                e.preventDefault();
+                alert('Hello ' + input.value);
             }
+
+            form.onsubmit = sayHelloAgain;
         </script>
     </body>
 </html>
