@@ -47,43 +47,42 @@
         </script>
         <script src="https://www.google-analytics.com/analytics.js" async defer></script>
         <script>
-            var form = document.getElementById('helloForm');
-            var input = document.getElementById('inputName');
-            var clearButton = document.getElementById('clearForm');
-            var dateSpan = document.getElementById('todaysDate');
-            var ajaxButton = document.getElementById('getAjax');
+          $(document).ready(function() {
+
+            var form = $('#helloForm');
+            var input = $('#inputName');
+            var clearButton = $('#clearForm');
+            var dateSpan = $('#todaysDate');
+            var ajaxButton = $('#getAjax');
 
             function sayHelloAgain(e) {
                 e.preventDefault();
-                alert('Hello ' + input.value);
+                alert('Hello ' + input.val());
             }
 
             function clearForm() {
-                input.value = '';
+                input.val('');
             }
 
             function showDate() {
               var date = new Date().toString();
-              dateSpan.innerHTML = date;
+              dateSpan.html(date);
             }
 
             showDate();
             setInterval(showDate, 1000);
 
             function loadDoc() {
-              var xhttp = new XMLHttpRequest();
-              xhttp.onreadystatechange = function() {
-                if (this.readyState == 4 && this.status == 200) {
-                 document.getElementById("ajax").innerHTML = this.responseText;
-                }
-              };
-              xhttp.open("GET", "some-text.html", true);
-              xhttp.send();
+              $.get('some-text.html', function(html) {
+                $('#ajax').html(html);
+              });
             }
 
-            form.onsubmit = sayHelloAgain;
-            clearButton.onclick = clearForm;
-            ajaxButton.onclick = loadDoc;
+            form.submit(sayHelloAgain);
+            clearButton.click(clearForm);
+            ajaxButton.click(loadDoc);
+
+          });
         </script>
     </body>
 </html>
