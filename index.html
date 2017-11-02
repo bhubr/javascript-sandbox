@@ -3,7 +3,7 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="x-ua-compatible" content="ie=edge">
-        <title></title>
+        <title>Formation jQuery</title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -23,6 +23,7 @@
         <!-- Add your site or application content here -->
         <div class="container">
             <p>Hello world! This is HTML5 Boilerplate.</p>
+            <p>Today's date: <span id="todaysDate"></span>.</p>
             <p>Enter your name please:</p>
             <form id="helloForm">
                 <input id="inputName" value="" />
@@ -46,6 +47,7 @@
             var form = document.getElementById('helloForm');
             var input = document.getElementById('inputName');
             var clearButton = document.getElementById('clearForm');
+            var dateSpan = document.getElementById('todaysDate');
 
             function sayHelloAgain(e) {
                 e.preventDefault();
@@ -55,6 +57,14 @@
             function clearForm() {
                 input.value = '';
             }
+
+            function showDate() {
+              var date = new Date().toString();
+              dateSpan.innerHTML = date;
+            }
+
+            showDate();
+            setInterval(showDate, 1000);
 
             form.onsubmit = sayHelloAgain;
             clearButton.onclick = clearForm;
