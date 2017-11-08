@@ -1,88 +1,71 @@
-<!doctype html>
-<html class="no-js" lang="">
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="x-ua-compatible" content="ie=edge">
-        <title>Formation jQuery</title>
-        <meta name="description" content="">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Formation jQuery</title>
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/main.css">
+<!--     <link rel="stylesheet" href="css/qunit-2.4.1.css"> -->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+<style type="text/css" media="screen">
 
-        <link rel="manifest" href="site.webmanifest">
-        <link rel="apple-touch-icon" href="icon.png">
-        <!-- Place favicon.ico in the root directory -->
+</style>
+</head>
+<body>
 
-        <link rel="stylesheet" href="css/normalize.css">
-        <link rel="stylesheet" href="css/main.css">
-        <link rel="stylesheet" href="css/styles.css">
-    </head>
-    <body>
-        <!--[if lte IE 9]>
-            <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</p>
-        <![endif]-->
+<div class="panel-container">
 
-        <!-- Add your site or application content here -->
-        <div class="container">
-            <p>Hello world! This is HTML5 Boilerplate.</p>
-            <p>Today's date: <span id="todaysDate"></span>.</p>
-            <p>Enter your name please:</p>
-            <form id="helloForm">
-                <input id="inputName" value="" />
-                <button class="blue" type="submit">Say hello again</button>
+    <div class="panel-left">
+        <div id="notification"></div>
+        <div class="panel-inner">
+            <button id="add-example-btn" class="icon-plus rounded blue"></button>
+            <form id="add-example-form" style="display: none;">
+                <input type="text" name="title" class="input-sm" value="" />
+                <button type="button" id="add-example-cancel" class="icon-cross rounded red"></button><!--
+                --><button type="submit" id="add-example-save" class="icon-checkmark rounded green"></button>
             </form>
-            <button class="red" id="clearForm" type="button">Clear form</button>
-
-            <div id="ajax"></div>
-            <button class="blue" id="getAjax" type="button">Get HTML with Ajax</button>
+            <nav id="selector">
+                <select id="file-select">
+                    <option value="-">&mdash;</option>
+                </select>
+            </nav>
+            <nav id="tabs">
+                <ul>
+                    <li><button id="show-html">HTML</button></li>
+                    <li><button id="show-javascript">JS</button></li>
+                </ul>
+            </nav>
+            <button id="save-changes" class="icon-cloud-upload green"></button>
         </div>
-        <script src="js/vendor/modernizr-3.5.0.min.js"></script>
-        <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
-        <script>window.jQuery || document.write('<script src="js/vendor/jquery-3.2.1.min.js"><\/script>')</script>
-        <script src="js/plugins.js"></script>
-        <script src="js/main.js"></script>
+        <div id="editor"></div>
+        <script type="text/html" id="editor-javascript"></script>
+        <script type="text/html" id="editor-html"></script>
+        <button id="revert-editor">!</button>
+    </div>
 
-        <!-- Google Analytics: change UA-XXXXX-Y to be your site's ID. -->
-        <script>
-            window.ga=function(){ga.q.push(arguments)};ga.q=[];ga.l=+new Date;
-            ga('create','UA-XXXXX-Y','auto');ga('send','pageview')
-        </script>
-        <script src="https://www.google-analytics.com/analytics.js" async defer></script>
-        <script>
-          $(document).ready(function() {
+    <div class="splitter">
+    </div>
 
-            var form = $('#helloForm');
-            var input = $('#inputName');
-            var clearButton = $('#clearForm');
-            var dateSpan = $('#todaysDate');
-            var ajaxButton = $('#getAjax');
+    <div class="panel-right">
+        <div id="html-content" class="container"></div>
+        <div id="tests" style="display:none">
+            <div id="qunit"></div>
+            <div id="qunit-fixture"></div>
+        </div>
+    </div>
+</div>
 
-            function sayHelloAgain(e) {
-                e.preventDefault();
-                alert('Hello ' + input.val());
-            }
-
-            function clearForm() {
-                input.val('');
-            }
-
-            function showDate() {
-              var date = new Date().toString();
-              dateSpan.html(date);
-            }
-
-            showDate();
-            setInterval(showDate, 1000);
-
-            function loadDoc() {
-              $.get('some-text.html', function(html) {
-                $('#ajax').html(html);
-              });
-            }
-
-            form.submit(sayHelloAgain);
-            clearButton.click(clearForm);
-            ajaxButton.click(loadDoc);
-
-          });
-        </script>
-    </body>
+<script src="js/vendor/modernizr-3.5.0.min.js"></script>
+<script src="js/vendor/jquery-3.2.1.min.js" ></script>
+<script src="js/vendor/jquery-resizable.min.js" ></script>
+<!-- <script src="js/vendor/qunit-2.4.1.js" ></script> -->
+<script src="js/vendor/lodash.min.js" ></script>
+<script src="js/vendor/loadJS.js" ></script>
+<script src="js/plugins.js"></script>
+<script src="js/main.js"></script>
+<script src="js/vendor/ace/ace.js" type="text/javascript" charset="utf-8"></script>
+<script src="js/editor-local-storage.js"></script>
+<script src="js/editor.js"></script>
+</body>
 </html>
