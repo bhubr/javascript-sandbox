@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>JS Sandbox</title>
+    <link rel="stylesheet" href="/css/normalize.css">
+    <link rel="stylesheet" href="/css/main.css">
+    {{#testMode}}<link rel="stylesheet" href="/css/qunit-2.4.1.css">{{/testMode}}
+    <link rel="stylesheet" href="/css/vendor/pure-grids-min.css">
+    <link rel="stylesheet" href="/css/vendor/pure-grids-responsive-min.css">
+    <link rel="stylesheet" href="/css/styles.css">
+<style type="text/css" media="screen">
+
+</style>
+</head>
+<body>
+
+<div class="panel-container">
+
+    <div class="panel-left">
+
+        <div id="navbar">
+            <button id="menu-btn" class="btn icon-menu"></button>
+            <a id="nav-back-home" href="/">JS Sandbox</a>
+            {{#testMode}}<a id="test-reload-btn" href="/?testing=1" style="float:right;"><button class="btn icon-loop2"></button></a>{{/testMode}}
+        </div>
+
+        <div id="nav-menus">
+            <div id="menu-repo" class="pure-g">
+              <div class="pure-u-1">
+                <span class="cat-title">{{_.exampleCollections}}</span>
+                <ul class="nav-menu">{{#menuRepo}}
+                  <li><a href="/{{path}}">{{title}}</a></li>{{/menuRepo}}
+                </ul>
+              </div>
+            </div>
+
+            <div id="menu-example" class="pure-g nav-menu">{{#menuExample}}
+              <div class="pure-u-1 pure-u-md-1-2">
+              <span class="cat-title">{{category.title}}</span>
+              <ul data-id="{{category.slug}}">{{#examples}}
+              <li><a href="/{{{slug}}}">{{title}}</a></li>{{/examples}}</ul>
+            </div>{{/menuExample}}</div>
+        </div>
+
+        <div id="notification" class="alert-box"></div>
+        <div class="panel-inner">
+
+        {{#errorMessage}}
+            <div id="server-alert" class="alert-box error">{{errorMessage}}</div>
+        {{/errorMessage}}
+
+            <div class="details-div">
+              <div class="inline-block left">
+                <section id="shortcut-repo"{{#repo}} class="hidden"{{/repo}}>
+                  <div class="bold">{{_.exampleCollections}}</div><ul>{{#menuRepo}}
+                    <li><a href="/{{path}}">{{title}}</a></li>{{/menuRepo}}
+                  </ul>
+                </section>
+                <section id="details-repo" class="inline-block">
+                {{#repo}}
+                    <span class="bold">{{_.collection}} </span><span>{{title}}</span>
+                {{/repo}}
+                </section>
+              </div>
+
+              <div id="add-repo" class="btn-form inline-block">
+                  <button class="add-btn inline-block h-collapsed light-gray fast in"><span class="icon-plus"></span> {{_.addCollection}}</button>
+                  <form class="inline-block h-collapsed">
+                      <input type="text" name="title" class="input-sm" value="" placeholder="{{_.collectionName}}" required />
+                      <button type="button" class="icon-cross rounded"></button><!--
+                      --><button type="submit" class="icon-checkmark rounded"></button>
+                  </form>
+              </div>
+            </div>
+
+            <div class="details-div">
+              <div class="inline-block left">
+                <section id="shortcut-example"{{^showShortcutExample}} class="hidden"{{/showShortcutExample}}>
+                  <div class="bold">{{_.examplesInCollection}}</div>{{#menuExample}}
+                  <span class="cat-title">{{category.title}}</span>
+                  <ul data-id="{{category.slug}}">{{#examples}}
+                  <li><a href="/{{{slug}}}">{{title}}</a></li>{{/examples}}</ul>
+                {{/menuExample}}
+                </section>
+                <section id="details-example" class="inline-block">
+                {{#example}}
+                    <strong>{{_.example}} </strong><span>{{title}}</span>
+                {{/example}}
+                </section>
+              </div>
+              <div id="add-example" class="btn-form inline-block">
+                <button class="add-btn inline-block h-collapsed light-gray fast{{#repo}} in{{/repo}}"><span class="icon-plus"></span> {{_.addExample}}</button>
+                <form class="inline-block h-collapsed">
+                    <input type="text" name="title" class="input-sm" value="" placeholder="{{_.exampleName}}" required />
+                    <button type="button" id="add-example-cancel" class="icon-cross rounded"></button><!--
+                    --><button type="submit" id="add-example-save" class="icon-checkmark rounded"></button>
+                </form>
+              </div>
+            </div>
+
+
+            <!-- <button id="save-changes" class="icon-cloud-upload green"></button> -->
+
+        </div>
+
+        
+        <div id="editor-wrapper"{{^showEditor}} style="display: none";{{/showEditor}}>
+            <ul id="tabs">{{#files}}
+                <li class="tab-{{type}}" data-type="{{type}}" data-name="{{name}}">{{name}} <span class="icon-cloud-upload"></span></li>
+            {{/files}}
+            </ul><ul id="add-file">
+            <li><button class="add-btn inline-block h-collapsed fast in">+</button>
+                <form class="inline-block h-collapsed">
+                    <input type="text" name="title" class="input-xs input-light-border" value="" placeholder="{{_.fileNameWithExt}}" required />
+                    <button type="button" id="add-example-cancel" class="icon-cross"></button><!--
+                    --><button type="submit" id="add-example-save" class="icon-checkmark"></button>
+                </form></li>
+            </ul>
+            <div id="editor"></div>
+        </div>
+
+        <!-- <script type="text/html" id="editor-javascript"></script>
+        <script type="text/html" id="editor-html"></script>
+        <script type="text/html" id="editor-css"></script> -->
+        <!-- <button id="revert-editor">!</button> -->
+    </div>
+
+    <div class="splitter">
+    </div>
+
+    <div class="panel-right">
+      <iframe id="sandbox-iframe"{{#testMode}} class="test-mode"{{/testMode}} {{#example}}src="/examples/{{repo.path}}/{{example.slug}}"{{/example}}{{^example}}src="/html/start-iframe.html"{{/example}}></iframe>
+      {{#testMode}}
+      <div id="qunit"></div>
+      <div id="qunit-fixture"></div>
+      {{/testMode}}
+    </div>
+
+</div>
+
+{{=<% %>=}}
+<script data-tmpl-for="menu-example" id="menu-example-tmpl" type="text/x-mustache-tmpl">
+  {{#menuExample}}
+  <div class="pure-u-1 pure-u-md-1-2">
+    <span class="cat-title">{{category.title}}</span>
+    <ul data-id="{{category.slug}}">{{#examples}}
+      <li><a href="/{{{slug}}}">{{title}}</a></li>{{/examples}}
+    </ul>
+  </div>{{/menuExample}}
+</script>
+
+<script data-tmpl-for="details-example" id="details-example-tmpl" type="text/x-mustache-tmpl">
+  {{#example}}
+    <strong>{{_.example}} </strong><span>{{title}}</span>
+  {{/example}}
+</script>
+
+<script data-tmpl-for="tabs" id="tabs-tmpl" type="text/x-mustache-tmpl">
+{{#files}}
+    <li class="tab-{{type}}" data-type="{{type}}" data-name="{{name}}">{{name}} <span class="icon-cloud-upload"></span></li>
+{{/files}}
+</script>
+
+<script data-tmpl-for="details-repo" id="details-example-repo" type="text/x-mustache-tmpl">
+{{#repo}}
+  <strong>{{_.collection}} </strong><span>{{title}}</span>
+{{/repo}}
+</script>
+
+<script data-tmpl-for="shortcut-repo" type="text/x-mustache-tmpl">
+  <div class="bold">{{_.exampleCollections}}</div><ul>{{#repos}}
+    <li><a href="/{{path}}">{{title}}</a></li>{{/repos}}
+  </ul>
+</script>
+
+<script data-tmpl-for="menu-repo" type="text/x-mustache-tmpl">
+  <div class="pure-u-1">
+    <span class="cat-title">{{_.exampleCollections}}</span>
+    <ul class="nav-menu">{{#repos}}
+      <li><a href="/{{path}}">{{title}}</a></li>{{/repos}}
+    </ul>
+  </div>
+</script>
+
+<script data-tmpl-for="shortcut-example" type="text/x-mustache-tmpl">
+  <div class="bold">{{_.examplesInCollection}}</div>{{#menuExample}}
+  <span class="cat-title">{{category.title}}</span>
+  <ul data-id="{{category.slug}}">{{#examples}}
+  <li><a href="/{{{slug}}}">{{title}}</a></li>{{/examples}}</ul>
+  {{/menuExample}}
+</script>
+<%={{ }}=%>
+
+<!-- Vendor scripts -->
+<script src="/js/vendor/eventemitter.js"></script>
+<script src="/js/vendor/modernizr-3.5.0.min.js"></script>
+<script src="/js/plugins.js"></script>
+<script src="/js/vendor/jquery-3.2.1.min.js" ></script>
+<script src="/js/vendor/jquery-resizable.min.js" ></script>
+<script src="/js/vendor/jquery.color.js" ></script>
+<script src="/js/vendor/mustache.min.js" ></script>
+<script src="/js/vendor/lodash.min.js" ></script>
+<script src="/js/vendor/loadJS.js" ></script>
+<script src="/js/vendor/ace/ace.js" type="text/javascript" charset="utf-8"></script>
+
+<!-- WS scripts -->
+<script id="inline-js-data">
+window._ws = {
+  files: {{{filesJSON}}},
+  repo: {{{repoJSON}}},
+  repos: {{{reposJSON}}},
+  _: {{{_JSON}}},
+  example: {{{exampleJSON}}}
+};
+</script>
+<script src="/js/req-promise.js"></script>
+<script src="/js/ws-ui-parts.js"></script>
+<script src="/js/ws-notify.js"></script>
+<script src="/js/ws-events.js"></script>
+<script src="/js/ws-menu.js"></script>
+<script src="/js/ws-forms.js"></script>
+<script src="/js/editor-local-storage.js"></script>
+<script src="/js/ws-editor.js"></script>
+{{#testRun}}
+<script>
+window._ws._path = "{{{appPath}}}";
+</script>
+<script src="/js/vendor/qunit-2.4.1.js"></script>
+<script src="/js/test/ws.test.js"></script>
+{{/testRun}}
+
+</body>
+</html>

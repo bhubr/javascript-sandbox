@@ -1,0 +1,10 @@
+{
+  "title": "JavaScript",
+  "defaultCategory": "array",
+  "categories": [
+    {
+      "slug": "array",
+      "title": "Tableaux"
+    }
+  ]
+}

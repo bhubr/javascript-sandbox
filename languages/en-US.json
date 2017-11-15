@@ -1,0 +1,14 @@
+{
+  "home": "Home",
+  "repoNotFound": "Example collection `%s` not found",
+  "exampleNotFound": "Example `%s/%s` not found",
+  "addCollection": "Add collection",
+  "addExample": "Add example",
+  "exampleName": "Example name",
+  "collectionName": "Collection name",
+  "collection": "Collection:",
+  "example": "Example:",
+  "fileNameWithExt": "File name",
+  "exampleCollections": "Example collections",
+  "examplesInCollection": "Examples in this collection"
+}

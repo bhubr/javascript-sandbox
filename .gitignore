@@ -4,5 +4,5 @@
 doc/
 node_modules/
 package-lock.json
-exemples/ajax-requete-themoviedborg/tmdb-key.json
+exemples/jquery/ajax-requete-themoviedborg/tmdb-key.json
 _stuff/

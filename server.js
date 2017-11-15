@@ -15,7 +15,7 @@ var app = require('./sandboxApp');
 // 1er exemple: envoie du HTML généré dynamiquement.
 // On utilise app.get pour attacher un gestionnaire à l'URL /ajax-example
 // uniquement avec la méthode GET
-app.get('/ajax-example', function(req, res) {
+app.get('/jquery/ajax/example-simple', function(req, res) {
   var date = new Date();
   var exampleHtml = '<p>Un peu de HTML retourné par le serveur.</p>' +
     '<p><em>Généré le: ' + date.toString() + '</em></p>';
@@ -24,7 +24,7 @@ app.get('/ajax-example', function(req, res) {
 
 // 2ème exemple : envoi formulaire par méthode GET
 // Notez bien d'où on extrait les paramètres passé par le client (req.query)
-app.get('/ajax-form-get', function(req, res) {
+app.get('/jquery/ajax/form-get', function(req, res) {
   var name = req.query.name;
   var birthdate = req.query.birthdate;
   var exampleHtml = '<p>Salutations, <em>' + name +
@@ -34,7 +34,7 @@ app.get('/ajax-form-get', function(req, res) {
 
 // 3ème exemple : envoi formulaire par méthode POST
 // Ici les paramètres viennent de req.body
-app.post('/ajax-form-post', function(req, res) {
+app.post('/jquery/ajax/form-post', function(req, res) {
   var title = req.body.title;
   var text = req.body.text;
   var exampleHtml = '<h2>' + title + '</h2>' +
@@ -75,7 +75,7 @@ function createNewUser(user) {
 }
 
 
-app.post('/login', function(req, res) {
+app.post('/jquery/ajax/login', function(req, res) {
 
   // Récupérer email et password
   var identifiants = req.body;
@@ -115,7 +115,7 @@ app.post('/login', function(req, res) {
 /**
  * Ce code va gérer la requête POST vers l'URL /register de notre micro-serveur
  */
-app.post('/register', function(req, res) {
+app.post('/jquery/ajax/register', function(req, res) {
 
   // Les données envoyées par le client (navigateur) sont dans la propriété "body"
   // de l'objet req (pour request)
@@ -134,7 +134,7 @@ app.post('/register', function(req, res) {
   }
 });
 
-app.get('/username-check', function(req, res) {
+app.get('/jquery/ajax/username-check', function(req, res) {
   var username = req.query.username;
   for(u = 0 ; u < userList.length ; u++) {
     if(username === userList[u].username) {

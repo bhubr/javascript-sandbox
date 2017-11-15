@@ -1,0 +1,14 @@
+{
+  "title": "Example Repo 1",
+  "defaultCategory": "test-stuff",
+  "categories": [
+    {
+      "slug": "test-stuff",
+      "title": "Test Stuff"
+    },
+    {
+      "slug": "empty-category",
+      "title": "Empty Category"
+    }
+  ]
+}

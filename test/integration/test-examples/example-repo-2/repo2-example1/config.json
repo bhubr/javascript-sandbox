@@ -1,0 +1,9 @@
+{
+  "title": "Random Example",
+  "category": "random-stuff",
+  "html": [ "example.html" ],
+  "js": [ "script.js" ],
+  "css": [],
+  "libsJs": [],
+  "libsCss": [ "styles.css" ]
+}

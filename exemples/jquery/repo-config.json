@@ -1,0 +1,22 @@
+{
+  "title": "jQuery",
+  "defaultCategory": "misc",
+  "categories": [
+    {
+      "slug": "selecteurs",
+      "title": "Sélecteurs"
+    },
+    {
+      "slug": "evenements",
+      "title": "Évènements"
+    },
+    {
+      "slug": "ajax",
+      "title": "AJAX"
+    },
+    {
+      "slug": "misc",
+      "title": "Non-classé"
+    }
+  ]
+}

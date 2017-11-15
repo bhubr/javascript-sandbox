@@ -1,0 +1,10 @@
+{
+  "title": "Example Repo 2",
+  "defaultCategory": "random-stuff",
+  "categories": [
+    {
+      "slug": "random-stuff",
+      "title": "Random Stuff"
+    }
+  ]
+}

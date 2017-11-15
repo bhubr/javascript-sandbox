@@ -1,0 +1,14 @@
+{
+  "home": "Accueil",
+  "repoNotFound": "Collection d'exemples `%s` introuvable",
+  "exampleNotFound": "Exemple `%s/%s` introuvable",
+  "addCollection": "Ajouter collection",
+  "addExample": "Ajouter exemple",
+  "exampleName": "Nom de l'exemple",
+  "collectionName": "Nom de la collection",
+  "collection": "Collection :",
+  "example": "Exemple :",
+  "fileNameWithExt": "Nom de fichier",
+  "exampleCollections": "Collections d'exemples",
+  "examplesInCollection": "Exemples dans cette collection"
+}

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+  <title>{{ title }} - Sandbox iframe</title>
+    <!-- HTML5 Boilerplate CSS -->
+    <link rel="stylesheet" href="/css/normalize.css">
+    <link rel="stylesheet" href="/css/main.css">
+    <!-- Vendor CSS -->
+    {{#libsCss}}
+    <link rel="stylesheet" href="/css/vendor/{{ . }}">
+    {{/libsCss}}
+    <!-- Example's CSS -->
+    {{#css}}
+    <link rel="stylesheet" href="/{{examplesDir}}/{{ repoSlug }}/{{ slug }}/{{ . }}">
+    {{/css}}
+    <style type="text/css" media="screen">
+    body {
+        font-family: Arial, Helvetica;
+    }
+    </style>
+  </head>
+  <body>
+
+    <div class="container">
+        {{{ body }}}
+    </div>
+
+    <!-- HTML5 Boilerplate JS -->
+    <script src="/js/vendor/modernizr-3.5.0.min.js"></script>
+    <script src="/js/plugins.js"></script>
+    <!-- Vendor JS -->
+    {{#libsJs}}
+    <script src="/js/vendor/{{ . }}" ></script>
+    {{/libsJs}}
+    <!-- Example's JS -->
+    {{#js}}
+    <script src="/{{examplesDir}}/{{ repoSlug }}/{{ slug }}/{{ . }}"></script>
+    {{/js}}
+
+  </body>
+</html>

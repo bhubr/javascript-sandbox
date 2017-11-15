@@ -14371,9 +14371,10 @@ Editor.$uid = 0;
         if (this.$tryReplace(range, replacement)) {
             replaced = 1;
         }
-
-        this.selection.setSelectionRange(range);
-        this.renderer.scrollSelectionIntoView(range.start, range.end);
+        if (range !== null) {
+            this.selection.setSelectionRange(range);
+            this.renderer.scrollSelectionIntoView(range.start, range.end);
+        }
 
         return replaced;
     };
@@ -19300,7 +19301,7 @@ var Editor = require("./editor").Editor;
         }
         function alignRight(m) {
             return !m[2] ? m[0] : spaces(startW + textW - m[2].length) + m[2]
-                + spaces(endW)
+                + spaces(endW, " ")
                 + m[4].replace(/^([=:])\s+/, "$1 ");
         }
         function unAlign(m) {

@@ -1,0 +1,25 @@
+<h5>API themoviedb.org</h5>
+
+<p class="notice">
+  Cet exemple fait appel à une API protégée par une clé d'accès.
+  Pour récupérer cette clé :
+</p>
+<ol>
+<li>Cliquez sur
+    <a target="_blank" href="http://bhubr.eu/tmdb.php?code=CGI-JQUERY-2017">ce lien</a> puis <strong>copiez</strong> ce qui s'affiche.
+</li>
+<li>
+    <strong>Collez</strong> ce que vous voyez dans le fichier <span class="code">
+        exemples/jquery/ajax-requete-themoviedborg/tmdb-key.json
+    </span> (en partant de la racine de ce dossier).
+</li>
+</ol>
+
+<form id="movie-title">
+    <p>Entrez un titre de film:</p>
+    <input type="text" name="title" placeholder="Titre" />
+    <button type="submit" class="blue" disabled="disabled">Go</button>
+</form>
+
+<div style="border: 1px solid #888; padding: 10px; margin: 10px;" id="tmdb-results">
+</div>

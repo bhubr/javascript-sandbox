@@ -1,0 +1,9 @@
+{
+  "title": "Evènements 2 : change",
+  "category": "evenements",
+  "html": [ "example.html" ],
+  "js": [ "script.js" ],
+  "css": [],
+  "libsJs": [ "jquery-3.2.1.min.js" ],
+  "libsCss": [ "styles.css" ]
+}
