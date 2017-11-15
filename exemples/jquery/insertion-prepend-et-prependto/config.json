@@ -1,0 +1,10 @@
+{
+  "slug": "insertion-prepend-et-prependto",
+  "title": "Insertion : prepend et prependTo",
+  "category": "misc",
+  "html": [ "example.html" ],
+  "js": [ "script.js" ],
+  "css": [],
+  "libsJs": [ "jquery-3.2.1.min.js" ],
+  "libsCss": [ "styles.css" ]
+}
