@@ -1,0 +1,9 @@
+{
+  "title": "Insertion : wrap et unwrap",
+  "category": "misc",
+  "html": [ "example.html" ],
+  "js": [ "script.js" ],
+  "css": [ "styles.css" ],
+  "libsJs": [ "jquery-3.2.1.min.js" ],
+  "libsCss": [ "styles.css" ]
+}

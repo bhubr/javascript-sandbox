@@ -1,0 +1,19 @@
+/* styles.css */
+.niveau-0 {
+    margin: 10px 0;
+}
+.niveau-0,
+.niveau-1,
+.niveau-2 {
+    padding: 15px 0 15px 30px;
+    width: 80%;
+}
+.niveau-0 {
+    background: #aaa;
+}
+.niveau-1 {
+    background: #ccc;
+}
+.niveau-2 {
+    background: #eee;
+}
