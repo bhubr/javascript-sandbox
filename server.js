@@ -147,5 +147,5 @@ app.get('/jquery/ajax/username-check', function(req, res) {
 
 
 
-console.log('Le serveur écoute sur le port 3000. Laissez cette console ouverte !')
+console.log('Le serveur écoute sur le port 3000. Laissez cette console ouverte ! Avec votre navigateur, allez sur http://localhost:3000');
 app.listen(3000);
