@@ -6,13 +6,13 @@ Un "bac à sable" pour jouer avec HTML, CSS et surtout JavaScript.
 
 Pré-requis :
 
-* (optionnel mais recommandé) Git pour récupérer le dépôt
-* [Nodejs](https://nodejs.org) pour pouvoir exécuter le serveur de l'application
+* (optionnel mais recommandé) [Git](https://git-scm.org) pour récupérer le dépôt
+* [Node.js](https://nodejs.org) pour pouvoir exécuter le serveur de l'application
 
 Deux options possibles pour utiliser cet outil :
 
 * **Avec Git**. Il faut alors installer [Git](https://git-scm.org) pour pouvoir cloner le dépot.
-* Alternativement, vous pouvez télécharger l'archive courante du dépôt en suivant [ce lien](https://github.com/bhubr/javascript-sandbox).
+* Alternativement, vous pouvez télécharger l'archive courante du dépôt en suivant [ce lien](https://github.com/bhubr/javascript-sandbox/archive/0.9.zip).
 
 ## Installation et paramétrage de Git
 
