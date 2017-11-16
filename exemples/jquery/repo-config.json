@@ -11,6 +11,10 @@
       "title": "Manipulation du DOM"
     },
     {
+      "slug": "proprietes-style",
+      "title": "Propriétés de style"
+    },
+    {
       "slug": "evenements",
       "title": "Évènements"
     },
