@@ -1,7 +1,7 @@
 {
   "slug": "insertion-append-et-appendto",
   "title": "Insertion : append et appendTo",
-  "category": "misc",
+  "category": "manipulation-dom",
   "html": [ "example.html" ],
   "js": [ "script.js" ],
   "css": [],

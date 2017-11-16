@@ -1,9 +1,10 @@
 {
-  "title": "Insertion : wrap et unwrap",
+  "slug": "insertion-after-before-etc",
+  "title": "Insertion : after, before, etc.",
   "category": "manipulation-dom",
   "html": [ "example.html" ],
   "js": [ "script.js" ],
-  "css": [ "styles.css" ],
+  "css": [],
   "libsJs": [ "jquery-3.2.1.min.js" ],
   "libsCss": [ "styles.css" ]
 }

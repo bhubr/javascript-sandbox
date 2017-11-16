@@ -1,6 +1,6 @@
 {
-  "title": "Filtres de contenu",
-  "category": "misc",
+  "title": "Suppression d'éléments",
+  "category": "manipulation-dom",
   "html": [ "example.html" ],
   "js": [ "script.js" ],
   "css": [ "styles.css" ],

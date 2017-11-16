@@ -1,6 +1,6 @@
 {
-  "title": "Insertion : wrap et unwrap",
-  "category": "manipulation-dom",
+  "title": "Filtres de contenu",
+  "category": "selecteurs",
   "html": [ "example.html" ],
   "js": [ "script.js" ],
   "css": [ "styles.css" ],

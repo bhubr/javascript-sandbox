@@ -7,6 +7,10 @@
       "title": "Sélecteurs"
     },
     {
+      "slug": "manipulation-dom",
+      "title": "Manipulation du DOM"
+    },
+    {
       "slug": "evenements",
       "title": "Évènements"
     },
