@@ -1,19 +1,26 @@
 /* styles.css */
-.niveau-0 {
-    margin: 10px 0;
-}
 .niveau-0,
 .niveau-1,
-.niveau-2 {
-    padding: 15px 0 15px 30px;
+.niveau-2,
+.niveau-3 {
+    padding: 10px 0 10px 20px;
+    box-sizing: border-box;
     width: 80%;
 }
 .niveau-0 {
-    background: #aaa;
+    background: #999;
 }
 .niveau-1 {
-    background: #ccc;
+    background: #bbb;
+}
+.niveau-1-et-demi {
+    border: 5px solid #acb;
+    padding: 10px;
 }
 .niveau-2 {
-    background: #eee;
+    background: #ddd;
+}
+
+.niveau-3 {
+    background: #fff;
 }

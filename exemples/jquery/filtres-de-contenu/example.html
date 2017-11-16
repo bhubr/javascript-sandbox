@@ -1,0 +1,39 @@
+<!-- Filtres de contenu -->
+<h3>Filtre <code>:contains()</code></h3>
+<ul id="liste-films-sf">
+  <li>Blade Runner</li>
+  <li>Interstellar</li>
+  <li>Star Trek</li>
+  <li>Star Wars</li>
+  <li>War of the Worlds</li>
+</ul>
+<ul id="liste-films-autres">
+  <li>Forrest Gump</li>
+  <li>Lone Star</li>
+  <li>The Star</li>
+</ul>
+
+<h3>Filtre <code>:empty()</code></h3>
+<p>
+    Comme on cible tous les éléments vides de la liste <code>#parent</code>,
+    les 2ème et 3ème <code>li</code> correspondent, ainsi que le
+    <code>span</code> dans le 4ème.
+</p>
+<ul id="parent">
+  <li>Enfant non vide</li>
+  <li class="vide"></li>
+  <li></li>
+  <li><span></span></li>
+</ul>
+
+<h3>Filtre <code>:has()</code></h3>
+<p>Ici les <code>div</code> qui contiennent un paragraphe avec la classe
+<code>gras</code> se font ajouter une classe <code>avec-p-gras</code>, qui
+change leur background, et ajoute une astérisque avant le paragraphe (voir CSS).
+</p>
+<div id="demo-filtre-has">
+  <div><p class="souligne">Texte souligné</p></div>
+  <div><p class="souligne gras">Texte souligné et gras</p></div>
+  <div><p class="italique gras">Texte italique et gras</p></div>
+  <div><p class="italique souligne">Texte italique et souligné</p></div>
+</div>

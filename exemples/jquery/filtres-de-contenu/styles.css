@@ -1,0 +1,41 @@
+/* styles.css */
+code {
+  color: #933;
+}
+#parent,
+#parent li {
+  padding: 10px;
+}
+#parent span {
+  padding: 5px;
+}
+#parent {
+  background: #888;
+}
+#parent span {
+  border: 5px solid #888;
+}
+#parent li {
+  list-style-type: none;
+  background: #ddd;
+  margin: 2px;
+}
+
+#demo-filtre-has div {
+  background: #ddd;
+}
+#demo-filtre-has div.avec-p-gras {
+  background: #adc;
+}
+#demo-filtre-has div.avec-p-gras p:before {
+  content: "* ";
+}
+.gras {
+  font-weight: bold;
+}
+.souligne {
+  text-decoration: underline;
+}
+.italique {
+  font-style: italic;
+}
