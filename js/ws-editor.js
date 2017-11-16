@@ -42,7 +42,17 @@ $(document).ready(function() {
 
   });
 
-
+// https://stackoverflow.com/questions/93695/best-cross-browser-method-to-capture-ctrls-with-jquery#answer-14180949
+  $(window).bind('keydown', function(event) {
+    if (event.ctrlKey || event.metaKey) {
+      switch (String.fromCharCode(event.which).toLowerCase()) {
+      case 's':
+        event.preventDefault();
+        (onSaveChanges.bind(_ws.ui.tabs))();
+        break;
+      }
+    }
+  });
 
   // /**
   //  * Make the left panel resizable
@@ -159,7 +169,6 @@ $(document).ready(function() {
       // saveTimeout1 = setTimeout(saveToLocalStorage, 500);
       // // saveTimeout2 = setTimeout(saveChanges, 1000);
     },
-
 
     render: function() {
       // console.log('render editor', this);
