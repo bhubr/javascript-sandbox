@@ -1,0 +1,10 @@
+{
+  "slug": "manipulation-dattributs-proprietes",
+  "title": "Manipulation d'attributs / propriétés",
+  "category": "misc",
+  "html": [ "example.html" ],
+  "js": [ "script.js" ],
+  "css": [],
+  "libsJs": [ "jquery-3.2.1.min.js" ],
+  "libsCss": [ "styles.css" ]
+}
