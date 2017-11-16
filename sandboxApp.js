@@ -267,7 +267,7 @@ app.post('/:repoSlug/examples',
       slug: exampleSlug,
       title,
       category: req.repo.defaultCategory
-    }, exampleTmpl);
+    }, _.cloneDeep(exampleTmpl));
 
     // Prepare files to write
     var targetDir = examplesDir + '/' + repoSlug + '/' + exampleSlug;
