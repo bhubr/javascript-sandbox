@@ -1,0 +1,18 @@
+/* styles.css */
+div {
+    padding: 10px;
+}
+.wrapper {
+    background: #999;
+}
+.inner {
+    margin-bottom: 20px;
+}
+.wrapper div:nth-child(2) {
+    background: #bef;
+    margin-left: 40px;
+}
+.wrapper div:nth-child(3) {
+    background: #efb;
+    border: 10px solid #bbb;
+}
