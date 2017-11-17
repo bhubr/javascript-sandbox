@@ -1,54 +1,59 @@
-<ul id="onglets" class="tab-nav">
+<ul id="onglets" class="nav nav-tabs">
     <li>
-        <a data-tab-id="tab-login" id="onglet1" class="active" href="#">Login</a>
+        <a class="nav-link active" data-tab-id="tab-login" id="onglet1" class="active" href="#">Connexion</a>
     </li>
     <li class="tab-nav">
-        <a data-tab-id="tab-register" id="onglet2" href="#">Register</a>
+        <a class="nav-link" data-tab-id="tab-register" id="onglet2" href="#">Inscription</a>
     </li>
 
 </ul>
 
-<div id="alert-box" class="alert alert-danger hidden" role="alert">
+<div id="alert-box" class="alert alert-danger collapse" role="alert">
   
 </div>
 
 <div class="tab" id="tab-login">
-    <form id="form-login">
-      <div class="form-group">
-        <label for="login-email">Email address</label>
-        <input type="email" class="form-control" id="login-email" aria-describedby="emailHelp" placeholder="Enter email">
-        <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
-      </div>
-      <div class="form-group">
-        <label for="login-password">Password</label>
-        <input type="password" class="form-control" id="login-password" placeholder="Password">
-      </div>
-      <div class="form-check">
-        <label class="form-check-label">
-          <input type="checkbox" class="form-check-input">
-          Check me out
-        </label>
-      </div>
-      <button type="submit" class="btn btn-primary">Submit</button>
-    </form>
+  <div class="card">
+    <div class="card-body">
+      <form id="form-login">
+        <div class="form-group">
+          <label for="login-identifier">Identifiant ou e-mail</label>
+          <input type="text" class="form-control" id="login-identifier" aria-describedby="identifierHelp" placeholder="Entrez votre identifiant ou e-mail">
+          <small class="text-danger collapse"></small>
+        </div>
+        <div class="form-group">
+          <label for="login-password">Mot de passe</label>
+          <input type="password" class="form-control" id="login-password" placeholder="Mot de passe">
+        </div>
+        <button type="submit" class="btn btn-primary">Envoyer</button>
+      </form>
+    </div>
+  </div>
 </div>
-<div class="tab" id="tab-register" style="display:none">
-    <form id="form-register">
-      <div class="form-group">
-        <label for="register-username">Username</label>
-        <input type="text" class="form-control" id="register-username" aria-describedby="usernameHelp" placeholder="Enter username" />
-      </div>
-      <div class="form-group">
-        <label for="register-email">Email address</label>
-        <input type="email" class="form-control" id="register-email" aria-describedby="emailHelp" placeholder="Enter email">
-        <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
-      </div>
-      <div class="form-group">
-        <label for="register-password">Password</label>
-        <input type="password" class="form-control" id="register-password" placeholder="Password">
-      </div>
 
-      <button type="submit" class="btn btn-primary">Register</button>
-    </form>
+<div class="tab" id="tab-register" style="display:none">
+  <div class="card">
+    <div class="card-body">
+      <form id="form-register">
+        <div class="form-group">
+          <label for="register-username">Identifiant</label>
+          <input type="text" class="form-control" id="register-username" aria-describedby="usernameHelp" placeholder="Entrez un identifiant (lettres, chiffres, _)" />
+          <small class="text-danger collapse"></small>
+        </div>
+        <div class="form-group">
+          <label for="register-email">Adresse e-mail</label>
+          <input type="email" class="form-control" id="register-email" aria-describedby="emailHelp" placeholder="Entrez un e-mail">
+          <small class="text-danger collapse"></small>
+        </div>
+        <div class="form-group">
+          <label for="register-password">Mot de passe</label>
+          <input type="password" class="form-control" id="register-password" placeholder="Mot de passe (4 caractères min.)">
+          <small class="text-danger collapse"></small>
+        </div>
+  
+        <button type="submit" class="btn btn-primary">Envoyer</button>
+      </form>
+    </div>
+  </div>
 </div>
 

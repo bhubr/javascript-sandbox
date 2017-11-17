@@ -82,6 +82,10 @@ $(document).ready(function() {
     editor.setTheme("ace/theme/eclipse");
     editor.$blockScrolling = Infinity;
     editorSession.setUseWrapMode(true);
+    editorSession.setOptions({
+        tabSize: 2,
+        useSoftTabs: true
+    });
     setDefaultEditorContent();
   }
 

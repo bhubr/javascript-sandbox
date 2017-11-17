@@ -2,8 +2,8 @@
   "title": "Validation de formulaires Bootstrap",
   "category": "misc",
   "html": [ "example.html" ],
-  "js": [ "script.js" ],
-  "css": [],
+  "js": [ "script.js", "alert-box.js" ],
+  "css": [ "styles.css" ],
   "libsJs": [ "jquery-3.2.1.min.js" ],
-  "libsCss": [ "styles.css", "bootstrap.min.css" ]
+  "libsCss": [ "bootstrap.min.css" ]
 }
